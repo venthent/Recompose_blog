@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="post">
+    {% if post.created_date %}
+    <div class="date">
+        {{ post.created_date }}
+    </div><br>
+    {% endif %}
+
+    {% if post.published_date %}
+
+    <div class="date">
+        <span>Published Date:</span>{{ post.published_date }}
+    </div>
+    {% endif %}
+    <a class="btn btn-default" href="{{ url_for('main.post_edit',id=post.id) }}"><span
+            class="glyphicon glyphicon-pencil"></span></a>
+    <h1><a href="">{{ post.title }}</a></h1>
+    <p>{{ post.text }}</p>
+
+</div>
+{% endblock %}
